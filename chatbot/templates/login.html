@@ -1,0 +1,595 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/static/vendor/animate/animate.css">
+		<link rel="stylesheet" type="text/css" href="/static/vendor/css-hamburgers/hamburgers.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/vendor/select2/select2.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/util.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+		<link rel="stylesheet" type="text/css" href="/static/mainmenu.css">
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>		
+<style>
+#login {
+     
+    width:50%;
+    
+    
+    display:none;
+
+}
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: aliceblue;
+    margin: 6px 0;
+    transition: 0.4s;
+   padding-right:20px;
+}
+.contain {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+    #menb {
+        z-index: 99;
+    }
+    .sidenav { 
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 5;
+        top: 70px;
+        left: 0;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+    
+    
+    
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+         background-color:rgba(0,0,0,0.7);
+    }
+    
+    .sidenav a:hover, .offcanvas a:focus{
+        color: #f1f1f1;
+    }
+    
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+    
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+    
+		body{
+			
+			
+			background: url("https://i.picsum.photos/id/60/3000/2000.jpg?grayscale");
+			background-size: cover;
+			font-family: sans-serif;
+		
+		}
+		.title
+		{	
+   			 font-size: 24px;
+    			color: #333333;
+   			 line-height: 0.5;
+   			 text-align: center;
+   			 width: 100%;
+    			display: block;
+    			padding: 50px 0 80px;
+		}
+		.title h1
+		{
+			margin: 0;
+			padding: 0;
+			text-transform: uppercase;
+			font-size: 36px;
+		}
+		.container
+		{	
+			width: 60%;
+			height: 330px;
+			background:#fff;
+			margin: 0 auto;
+			border: 2px solid #fff;
+			box-shadow: 0 15px 40px rgba(0,0,0,.5);
+		}
+		.container .left
+		{
+			float: left;
+align-items:center;
+			width:50%;
+			height: 320px;
+
+			background: url("");
+			background-size: cover;
+			box-sizing: border-box;
+			
+		}
+		.container .right
+		{
+			float: right;
+			width: 50%;
+			height:320px;
+			box-sizing:border-box;
+		}
+		.formBox
+		{
+			width:100%;
+			padding:28px 45px;
+			box-sizing:border-box;
+			height: 320px;
+			background: #fff;
+		}
+		.formBox p
+		{	
+		 	margin:1px;
+			padding:3px;
+			font-weight:bold;
+			color:#a6af13;
+		}
+		.formBox input
+		{	
+			width: 80%;
+			margin-bottom: 20px;
+		}
+		.formBox input[type='text']
+		.formBox input[type='Password']
+		{
+			boarder: none;
+			border-bottom;2px solid #262626;
+		}
+		.formBox input[type='submit']
+		{
+			border: none;
+			outline: none;
+			height: 40px;
+			color: #fff;
+			background: #cccc00;
+			cursor: pointer;
+		}
+		.formBox input[type='submit']:hover
+		{
+			background: #a6af13;
+		}
+		.formBox a
+		{
+			color: #262626;
+			font-size: 12px;
+			font-weight:bold;
+		}
+		.text{
+		font-family: Poppins-Medium;
+   		 font-size: 20px;
+   		 line-height: 1.0;
+   		 color: #666666;
+    		display: block;
+   		 width: 10%;
+    		background: #e6e6e6;
+    		height: 30px;
+    		border-radius: 19px;
+    		padding: 0 5px 0 28px;
+		}
+		.submit{
+		font-family: Poppins-Medium;
+   		 font-size: 15px;
+   		 line-height: 1.0;
+   		 color: #666666;
+    		display: block;
+   		 width: 10%;
+    		background: #e6e6e6;
+    		height: 30px;
+    		border-radius: 19px;
+    		padding: 5 10px 10 28px;
+		}
+		
+		.boxtitle
+		{
+    font-family: Poppins-Bold;
+    font-size: 24px;
+    color: #333333;
+    line-height: 1.2;
+    font-weight: bold;
+    width: 100%;
+    display: block;
+    padding-bottom: 24px;
+}
+.focus-input100 {
+  display: block;
+  position: absolute;
+  border-radius: 25px;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 0px;
+  color: rgba(87,184,70, 0.8);
+}
+
+.input100:focus + .focus-input100 {
+  -webkit-animation: anim-shadow 0.5s ease-in-out forwards;
+  animation: anim-shadow 0.5s ease-in-out forwards;
+}
+
+@-webkit-keyframes anim-shadow {
+  to {
+    box-shadow: 0px 0px 70px 25px;
+    opacity: 0;
+  }
+}
+
+@keyframes anim-shadow {
+  to {
+    box-shadow: 0px 0px 70px 25px;
+    opacity: 0;
+  }
+}
+
+.symbol-input100 {
+  font-size: 15px;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  border-radius: 25px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 35px;
+  pointer-events: none;
+  color: #666666;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.input100:focus + .focus-input100 + .symbol-input100 {
+  color: #57b846;
+  padding-left: 28px;
+}
+.flash{
+ font-family: Poppins-Bold;
+    font-size: 24px;
+font-weight: bold;
+color: #ffffff;
+}
+
+
+#dev {
+     
+    width:50%;
+    
+    
+    display:none;
+
+}
+
+.our-team {
+  padding: 30px 0 40px;
+  margin-bottom: 30px ;
+  background-color:#ffffff00 ;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+border-style: ridge;
+}
+
+.our-team .picture {
+  display: inline-block;
+  height: 130px;
+  width: 130px;
+  margin-bottom: 50px;
+  z-index: 1;
+  position: relative;
+}
+
+.our-team .picture::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background-color: #1369ce;
+  position: absolute;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  opacity: 0.9;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+}
+
+.our-team:hover .picture::before {
+  height: 100%;
+}
+
+.our-team .picture::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #1369ce;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.our-team .picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: all 0.9s ease 0s;
+}
+
+.our-team:hover .picture img {
+  box-shadow: 0 0 0 14px #f7f5ec;
+  transform: scale(0.7);
+}
+
+.our-team .title {
+  display: block;
+  font-size: 15px;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+.our-team .name{
+  display: block;
+font-weight:bold;
+font-family: sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+.our-team .social {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #1369ce;
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  transition: all 0.5s ease 0s;
+}
+
+.our-team:hover .social {
+  bottom: 0;
+}
+
+.our-team .social li {
+  display: inline-block;
+}
+
+.our-team .social li a {
+  display: block;
+  padding: 10px;
+  font-size: 17px;
+  color: white;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+
+.our-team .social li a:hover {
+  color: #1369ce;
+  background-color: #f7f5ec;
+}
+.profil 
+{	
+			width: 70%;
+			height: 200px;
+			margin: 0 auto;
+			border: 2px ;
+			
+}
+.jbiet			
+{float:right;
+padding-top:10px;
+padding-right:20px;
+overflow:hidden;
+}
+
+
+	</style>			
+		<title>login</title>
+		
+	</head>
+	<body>
+	
+	 <label for="toggle">&#9776;</label>
+<div class="contain" id='menb' onclick="myFunction(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+
+</div>
+
+
+<div id="mySidenav" class="sidenav">
+        
+            <a class="menuitems" href="#home">Home</a>
+           <a class="menuitems" onclick="toggle_visibility('login')">Chatbot login</a>
+            <a class="menuitems" onclick="toggle_visibility('dev')">About</a>
+            
+</div>
+
+
+		<div  id="login" class="container">
+			
+			<div class="left"  data-tilt >
+<img id='' src="/static/images/img-01.png"/></div>
+			<div class="right">
+				
+				<div class="formBox">
+					<span class="boxtitle">
+						Chatbot Login
+					</span>
+
+					
+					<form action="/checkUser" method="post">
+						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+									
+						<p>        Username          </p>
+						<input  class="text" type="text" name="user" placeholder="User name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+						</div>
+						<p>Password</p>
+						<input class="text" type="Password" name="password" placeholder="********">
+						<input class="submit" type="submit" >
+						
+					</form>
+				</div>
+			</div>
+
+	</div>
+
+<div id="dev" class="profil">
+  <div class="row">
+    <div class="col">
+      <div class="our-team">
+        <div class="picture">
+          <img class="img-fluid" src="https://lh4.googleusercontent.com/-6QKzBFyM9iM/WblW-3VruaI/AAAAAAAAAAA/r3xdh19xa5QreYKIBVhqZkaJFNILu4pGgCOQCEAE/s128-c-k/photo.jpg">
+        </div>
+        <div class="team-content">
+          <h3 class="name">Abhilash reddy</h3>
+          <h4 class="title">Web Developer</h4>
+        </div>
+        <ul class="social">
+          <li><a  class="fa fa-linkedin" aria-hidden="true" href="https://www.linkedin.com/in/abhilash-nreddy-223750130">PROFILE</a></li>
+        </ul>
+      </div>
+    </div>
+      
+      
+</div>
+	
+                       <script src='/static/jquery.js'></script>
+<script>
+function dev(){
+    
+    document.getElementById("dev").style.display = "block";
+}
+function login(){
+    
+    document.getElementById("login").style.display = "block";
+}
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+
+function myFunction(x) {
+    x.classList.toggle("change"); 
+    
+
+}
+
+
+
+	 $('document').ready(function () {
+    var trigger = $('#menb');
+        isClosed = false;
+
+    trigger.click(function () {
+      burgerTime();
+    });
+
+    function burgerTime() {
+      if (isClosed == true) {
+		  
+		  closeNav() ;
+        //trigger.removeClass('is-open');
+        // trigger.addClass('is-closed');
+        
+        isClosed = false;
+		 
+      } else {
+		  
+		  openNav();
+         trigger.removeClass('is-closed');
+         trigger.addClass('is-open');
+        
+        isClosed = true;
+		
+      }
+    }
+
+  });
+$('#btn').click(function() {
+    $('#mySidenav').toggle();
+});
+ function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+   }
+
+
+</script>
+<script src="/static/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+</div>
+	</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <link rel="stylesheet" type="text/css" href="/static/style.css">
+<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  </head>
+<style>
+.backgroundimage {
+  background-image: url("https://brandingred.com/wp-content/uploads/2018/02/Branding-red.gif");
+  background-color: #cccccc;
+  height:950px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.text-center {
+    text-align: center;
+}
+.logged .i{
+ text-align: center;
+font-weight:bolder;
+text-size:25px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 5px;
+  overflow: hidden;
+  
+  
+ 
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li p {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+font-weight:bold;
+}
+li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+font-weight:bold;
+}
+li p1 {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+font-weight:bold;
+padding-right:569px;
+padding-left:125px;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+    </style>
+  <body>
+<div class="backgroundimage" >
+<ul>
+  
+  <li><p class="active1">{% with messages = get_flashed_messages() %}
+				{%  if messages %}
+					{% for msg in messages %}
+						<i class="logged">{{msg}}</i>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}</></li>
+
+<li><a class="active" href="/logout">logout</a></li>
+
+</ul>
+  
+
+      <div id="chatbox">
+	
+        <p class="botText"><span>Hi! I'm Chatbot.</span></p>
+      </div>
+      <div id="userInput">
+        <input id="textInput" type="text" name="msg" placeholder="Message">
+        <input id="buttonInput" type="submit" value="Send">
+      </div>
+      <script>
+        function getBotResponse() {
+          var rawText = $("#textInput").val();
+          var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          $.get("/get", { msg: rawText }).done(function(data) {
+            var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+            $("#chatbox").append(botHtml);
+            document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          });
+        }
+        $("#textInput").keypress(function(e) {
+            if(e.which == 13) {
+                getBotResponse();
+            }
+        });
+        $("#buttonInput").click(function() {
+          getBotResponse();
+        })
+$(document).ready(function(){
+  $("a").click(function(){
+      alert("you will be logged out");
+  });
+});
+      </script>
+    </div>
+    </div>
+</div>
+  </body>
+</html>
